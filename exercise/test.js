@@ -8,7 +8,7 @@ const cn = {
 };
 
 describe('rows', () => {
-    it('should be updated', (done) => {
+    it('test', (done) => {
         const pgp = mainPgp();
         const db = pgp(cn);
         const solution = fs.readFileSync('./solution.sql', 'utf8');
