@@ -1,6 +1,6 @@
 import fs from 'fs';
 import assert from 'assert';
-const pgp = require('pg-promise')(/*options*/);
+import mainPgp from 'pg-promise';
 
 const cn = {
     user: 'nobody',
@@ -9,6 +9,7 @@ const cn = {
 
 describe('rows', () => {
     it('should be updated', (done) => {
+        const pgp = mainPgp();
         const db = pgp(cn);
         const solution = fs.readFileSync('./solution.sql', 'utf8');
 
